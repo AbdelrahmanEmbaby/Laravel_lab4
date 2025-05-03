@@ -30,8 +30,3 @@ Route::get('/posts/{id}', [App\Http\Controllers\PostsController::class, 'show'])
     ->where('id', '[0-9]+');
 
 require __DIR__.'/auth.php';
-
-// fallback
-Route::get('{any}', function () {
-    return redirect(route('posts.index'));
-})->where('any', '.*');
